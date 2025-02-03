@@ -1,2 +1,2 @@
-# MYHAB
-Learn, Share & collaborate
+# HMS
+Hiring Management System
