@@ -3,11 +3,11 @@ import cors from "cors";
 import dotenv from "dotenv";
 import userRoutes from "./routes/userRoutes";
 
-import { dbInit } from "../db/dbInit";
+import { dbInit } from "./db/dbInit";
 
-dbInit();
 
 dotenv.config(); // Load environment variables
+dbInit();
 
 const app = express();
 const PORT = process.env.PORT || 5000;

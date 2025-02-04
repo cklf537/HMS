@@ -1,5 +1,6 @@
 import { Dialect, Sequelize } from "sequelize";
-import dotenv from 'dotenv';
+import dotenv from "dotenv";
+dotenv.config();
 
 const DATABASE = process.env.DATABASE || '';
 const HOST = process.env.HOST;

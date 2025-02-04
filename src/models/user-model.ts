@@ -1,5 +1,5 @@
 import { Model, DataTypes, Optional } from "sequelize";
-import squaalizeInstance from "../config";
+import squaalizeInstance from "../../config";
 
 interface UserAttributes {
     id: number;

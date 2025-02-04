@@ -1,4 +1,4 @@
-import User from "./models/user-model";
+import User from "../models/user-model";
 
 const dbInit = async () => {
     await User.sync({ alter: true });
