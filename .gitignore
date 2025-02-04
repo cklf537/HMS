@@ -8,11 +8,11 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
-docker-configuration
+# docker-configuration
 dist
 dist-ssr
 *.local
-.env
+# .env
 
 # Editor directories and files
 .vscode/*
