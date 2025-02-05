@@ -1,6 +1,7 @@
 import { Router, Request, Response } from "express";
 // import User  from "../models/userModel";
-import { client } from "../db/db";
+// import { client } from "../db/db-connection";
+import sequelize from "db/db-connection";
 
 
 const router = Router();
