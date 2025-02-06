@@ -28,8 +28,19 @@ const router = Router();
 // POST /users
 
 router.post("/", (req: Request, res: Response) => {
-  const { name } = req.body;
-  res.json({ message: `User ${name} created` });
+  const { 
+    firstName,
+    lastName,
+    address,
+    email,
+    zip,
+    state,
+    city,
+    country,
+    phone,
+    password
+   } = req.body;
+  res.json({ message: `User ${firstName} created` });
 });
 
 export default router;

@@ -11,7 +11,7 @@ const dbInit = async () => {
         firstName: "John",
         lastName: "Doe",
         address: "123 Main St",
-        email: "john.doetest.co",
+        email: "john@doetest.co",
         zip: "12345",
         state: "NY",
         city: "New York",

@@ -1,5 +1,5 @@
 import { Optional, UUID } from "sequelize";
-import { Table, Model, Column, CreatedAt, UpdatedAt, Default, DataType, IsEmail} from "sequelize-typescript";
+import { Table, Model, Column, CreatedAt, UpdatedAt, Default, DataType, IsEmail, IsUUID, PrimaryKey, NotNull, Length, AllowNull, Unique} from "sequelize-typescript";
 
 interface UserAttributes {
     id: string;
@@ -26,72 +26,53 @@ interface UserCreationAttributes extends Optional<UserAttributes, 'id'> {};
 })
 
 export default class Users extends Model<UserAttributes, UserCreationAttributes> {
-    @Column({
-        primaryKey: true,
-        type: DataType.UUID,
-        defaultValue: DataType.UUIDV4,
-    })
+    @IsUUID(4)
+    @PrimaryKey
+    @Default(DataType.UUIDV4)
+    @Column
     declare id: string;
 
-    @Column({
-        type: 'VARCHAR(255)',
-        allowNull: false,
-    })
+    @AllowNull(false)
+    @Column
     declare firstName: string;
 
-    @Column({
-        type: 'VARCHAR(255)',
-        allowNull: false,
-    })
+    @AllowNull(false)
+    @Column
     declare lastName: string;
 
-    @Column({
-        type: 'VARCHAR(255)',
-        allowNull: false,
-    })
+    @AllowNull(false)
+    @Column
     declare address: string;
 
     @IsEmail
-    @Column({
-        type: 'VARCHAR(255)',
-        allowNull: false,
-    })
+    @AllowNull(false)
+    @Unique
+    @Column
     declare email: string;
 
-    @Column({
-        type: 'VARCHAR(255)',
-        allowNull: false,
-    })
+    @Length({ min: 5, max: 10 })
+    @AllowNull(false)
+    @Column
     declare zip: string;
 
-    @Column({
-        type: 'VARCHAR(255)',
-        allowNull: false,
-    })
+    @AllowNull(false)
+    @Column
     declare state: string;
 
-    @Column({
-        type: 'VARCHAR(255)',
-        allowNull: false,
-    })
+    @AllowNull(false)
+    @Column
     declare city: string;
 
-    @Column({
-        type: 'VARCHAR(255)',
-        allowNull: false,
-    })
+    @AllowNull(false)
+    @Column
     declare country: string;
-
-    @Column({
-        type: 'VARCHAR(255)',
-        allowNull: false,
-    })
+    
+    @AllowNull(false)
+    @Column
     declare phone: string;
 
-    @Column({
-        type: 'VARCHAR(255)',
-        allowNull: false,
-    })
+    @AllowNull(false)
+    @Column
     declare password: string;
 
     @CreatedAt
